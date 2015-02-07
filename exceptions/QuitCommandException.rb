@@ -1,0 +1,2 @@
+class QuitCommandException < RuntimeError;
+end

@@ -1,0 +1,4 @@
+require_relative 'GenericClientReceiveCommandHandler'
+class HerderClientReceiveCommandHandler < GenericClientReceiveCommandHandler
+
+end

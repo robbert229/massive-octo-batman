@@ -1,0 +1,2 @@
+class RemoteQuitException < RuntimeError;
+end

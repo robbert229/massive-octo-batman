@@ -1,0 +1,2 @@
+class DisconnectException < RuntimeError;
+end

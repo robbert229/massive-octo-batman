@@ -1,0 +1,2 @@
+class CredentialsAlreadyInUseException < RuntimeError;
+end
