@@ -14,7 +14,7 @@ class HerderClient
     sender = HerderClientSendCommandHandler.new
     receiver = HerderClientReceiveCommandHandler.new
 
-    creds = CredentialGenerator.create('localhost', 6667,)
+    creds = CredentialGenerator.create('localhost', 6667, true)
 
     client.connect(creds.address, creds.port)
     initialAuthentication(client, creds)
@@ -55,12 +55,14 @@ class HerderClient
       input = gets.chomp
       begin
         params = input.split(' ')
+        puts params[0].upcase
         sender[params[0].upcase, client, creds, params[0..-1]]
       rescue QuitCommandException
         client.close
         Process.exit!(true)
       rescue NoMethodError
         #if its not a built in command send it across the net
+        puts 'noe'
         client.write(input)
       end
     end

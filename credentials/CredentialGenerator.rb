@@ -3,8 +3,14 @@ require 'open-uri'
 require_relative 'Credentials'
 
 class CredentialGenerator
-  def self.create(ip, port)
-    nick = Etc.getlogin
+  def self.create(ip, port, herder = false)
+
+    if herder
+      nick = 'herder'
+    else
+      nick = Etc.getlogin
+    end
+
     username = Etc.getlogin
     realname = open('http://whatismyip.akamai.com').read
     channel = '#TheHerd'

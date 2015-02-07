@@ -6,6 +6,20 @@ security its a fun little project that I built in a weekend.
 This is my first ruby project and I have been having a few issues with organization
 and file structuring so I have a very informal method of running it right now. 
 
-You run either HerderClient.rb or ZombieClient.rb and it does its magic. Theres no documentation
-right now because I am too busy writing the actual code. Anyways don't use my code for evil.
-Im too lazy to actually put in a license so don't be a bad guy...
+You run either HerderClient.rb or ZombieClient.rb and it does its magic.
+Anyways don't use my code for evil. Im too lazy to actually put in a
+license so don't be a bad guy...
+
+Commands
+
+who - nick
+cmd - the command you want executed
+address - the ip address to connect to
+port - the port to connect to
+fileSource - the path of the file you want to upload
+fileDest - the path that you want to write the file to
+
+directive kill [who] - closes the program for the specified bot.
+directive ping - has all of the bots respond with a pong and thier global ip. ex - "PONG 123.123.123.123".
+directive exec [who] [cmd] - executes the specified command and says the result in the channel.
+directive transfer [who] [address] [port] [fileSource] [fileDest] - transfers a specified file to or from the bots.

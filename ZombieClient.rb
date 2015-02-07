@@ -52,7 +52,7 @@ class ZombieClient
           reciever[params[0].upcase, client, creds, params[0..-1]]
         end
       rescue NoMethodError
-        #do nothing
+        puts 'noe'
       rescue RemoteQuitException
         break;
       end

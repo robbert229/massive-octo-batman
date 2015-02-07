@@ -3,7 +3,6 @@ require_relative 'FileTransferUtil'
 
 class FileTransferSenderUtil < FileTransferUtil
   def sendSync(port,fileSource)
-    puts @SIZE
     server = TCPServer.new("0.0.0.0",port)
     connection = server.accept
     fin = File.open(fileSource,"rb")
@@ -18,9 +17,9 @@ class FileTransferSenderUtil < FileTransferUtil
   end
 
   def sendAsync(port,fileSource,cb)
-    Thead.new {
+    Thread.new {
       sendSync(port,fileSource)
-      cb.run()
+      cb.Run()
     }
   end
 end
