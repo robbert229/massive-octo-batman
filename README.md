@@ -13,13 +13,22 @@ license so don't be a bad guy...
 Commands
 
 who - nick
+
 cmd - the command you want executed
+
 address - the ip address to connect to
+
 port - the port to connect to
+
 fileSource - the path of the file you want to upload
+
 fileDest - the path that you want to write the file to
 
+
 directive kill [who] - closes the program for the specified bot.
+
 directive ping - has all of the bots respond with a pong and thier global ip. ex - "PONG 123.123.123.123".
+
 directive exec [who] [cmd] - executes the specified command and says the result in the channel.
+
 directive transfer [who] [address] [port] [fileSource] [fileDest] - transfers a specified file to or from the bots.
