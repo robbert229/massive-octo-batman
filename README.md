@@ -10,7 +10,7 @@ You run either HerderClient.rb or ZombieClient.rb and it does its magic.
 Anyways don't use my code for evil. Im too lazy to actually put in a
 license so don't be a bad guy...
 
-Commands
+TERMS
 
 who - nick
 
@@ -24,6 +24,7 @@ fileSource - the path of the file you want to upload
 
 fileDest - the path that you want to write the file to
 
+COMMANDS
 
 directive kill [who] - closes the program for the specified bot.
 
