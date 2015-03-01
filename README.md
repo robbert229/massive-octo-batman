@@ -6,9 +6,9 @@ security its a fun little project that I built in a weekend.
 This is my first ruby project and I have been having a few issues with organization
 and file structuring so I have a very informal method of running it right now. 
 
-You run either HerderClient.rb or ZombieClient.rb and it does its magic.
-Anyways don't use my code for evil. Im too lazy to actually put in a
-license so don't be a bad guy...
+You run either HerderClient.rb or ZombieClient.rb and it does its magic. The program
+itself isn't that useful because of the requirement of ruby on a machine but it was a
+fun project to learn ruby.
 
 TERMS
 
